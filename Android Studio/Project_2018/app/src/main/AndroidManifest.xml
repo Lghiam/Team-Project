@@ -32,18 +32,25 @@
         <activity
             android:name=".CustomerSetDetailsActivity"
             android:parentActivityName=".UserChoiceActivity" />
-        <activity android:name=".CustomersListOfMatchsActivity"
-            android:parentActivityName=".CustomerSetDetailsActivity"/>
-        <activity android:name=".MoverListOfMatches"
-            android:parentActivityName=".MoverSetDetailsActivity"/>
-        <activity android:name=".MoverDisplayedDetails"
-            android:parentActivityName=".CustomersListOfMatchsActivity"/>
-        <activity android:name=".CustomerDisplayedDetails"
-            android:parentActivityName=".MoverListOfMatches"/>
-        <activity android:name=".ChatCustomerSideActivity"
-            android:parentActivityName=".MoverDisplayedDetails"/>
-        <activity android:name=".ChatMoverSideActivity"
-            android:parentActivityName=".CustomerDisplayedDetails"></activity>
+        <activity
+            android:name=".CustomersListOfMatchsActivity"
+            android:parentActivityName=".CustomerSetDetailsActivity" />
+        <activity
+            android:name=".MoverListOfMatches"
+            android:parentActivityName=".MoverSetDetailsActivity" />
+        <activity
+            android:name=".MoverDisplayedDetails"
+            android:parentActivityName=".CustomersListOfMatchsActivity" />
+        <activity
+            android:name=".CustomerDisplayedDetails"
+            android:parentActivityName=".MoverListOfMatches" />
+        <activity
+            android:name=".ChatCustomerSideActivity"
+            android:parentActivityName=".MoverDisplayedDetails" />
+        <activity
+            android:name=".ChatMoverSideActivity"
+            android:parentActivityName=".CustomerDisplayedDetails" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>
