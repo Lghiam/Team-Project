@@ -30,6 +30,10 @@
     <string name="set_username">Your username</string>
     <string name="set_password">Your password</string>
     <string name="set_email">Your email</string>
+    <string-array name="Type">
+        <item>less than 10 items</item>
+        <item>more than 10 items</item>
+    </string-array>
     <string name="errorDisplay" />
 
 </resources>

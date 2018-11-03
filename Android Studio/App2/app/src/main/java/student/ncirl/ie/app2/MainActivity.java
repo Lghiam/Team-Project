@@ -1,4 +1,4 @@
-package com.project.moverskeletalapp;
+package student.ncirl.ie.app2;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class CustomerSetDetailsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     //Declaring Variables
     private EditText fname;
@@ -22,10 +22,11 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
     private Spinner type;
     private Button save;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_set_details);
+        setContentView(R.layout.activity_main);
 
         //Searching for ID of variables by the name of the Text box
         fname = findViewById(R.id.FnameET);
@@ -44,7 +45,6 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
             }
         });
 
-        //Spinner is the used to make a drop menu selection.
         Spinner spinner = findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Type, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
@@ -52,10 +52,9 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
         spinner.setOnItemSelectedListener(this);
     }
 
-
-    // Saves the details to the server
+    //the User choice function is used for redirecting the user to the next page.
     public void UserChoice(){
-        Intent intent = new Intent(this, CustomersListOfMatchsActivity.class);
+        Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
 
@@ -132,7 +131,7 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
     public void validate(View v){
         if (validatefname() && validatelname() && validatephone() && validateaddress() && validateprice()){
             UserChoice();
-            String input = " Your Details have been saved";
+            String input = " Your Detail have been saved";
 
             //Toast methos prints out the above string in a little box
             Toast.makeText(this, input, Toast.LENGTH_LONG).show();
@@ -152,3 +151,4 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
 
     }
 }
+
