@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">App2</string>
-    <string-array name="Type">
-        <item>less than 10 items</item>
-        <item>more than 10 items</item>
-    </string-array>
-</resources>
