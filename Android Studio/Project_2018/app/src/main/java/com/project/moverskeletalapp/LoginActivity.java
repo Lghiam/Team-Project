@@ -81,11 +81,11 @@ public class LoginActivity extends AppCompatActivity {
     private boolean validatePassword() {
         String password = passwordET.getText().toString().trim();
 
-        //checking if there no blanks in the text boxes and making sure the password is not less than 5 characters. conditions must be met to continue to next page
+        //checking if there no blanks in the text boxes and making sure the password is not less than 10 characters. conditions must be met to continue to next page
         if (password.isEmpty()) {
             passwordET.setError("fields can't be empty");
             return false;
-        } else if (password.length() < 8){
+        } else if (password.length() < 10){
             passwordET.setError("password is too short");
             return false;
         } else {

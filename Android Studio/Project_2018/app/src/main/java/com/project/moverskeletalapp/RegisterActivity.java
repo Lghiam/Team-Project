@@ -1,11 +1,15 @@
 package com.project.moverskeletalapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,11 +30,23 @@ public class RegisterActivity extends AppCompatActivity {
     boolean validPassword = false;
     boolean validEmail = false;
 
+    //Code that creates an instance of the database
+    DatabaseReference databaseReference;
+
+    private ProgressDialog progressDialog;
+
+
+
     //Code generated on page load.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        //code that sets a database under the name 'user login'
+        databaseReference = FirebaseDatabase.getInstance().getReference("user login");
+
+        progressDialog = new ProgressDialog(this);
     }
 
     //Button to finish Registration then go back to login page.
@@ -84,6 +100,16 @@ public class RegisterActivity extends AppCompatActivity {
             username = checkUsername.getText().toString();
             email = tempEmail;
             password = tempPass;
+
+            //String that has a random 'key' value for id
+            String id = databaseReference.push().getKey();
+            //Calls the User class and passes in the given values to the array.
+            Users users = new Users(id,username,email,password);
+            //saves the array to a database under the given 'child'
+            databaseReference.child(id).setValue(users);
+
+            progressDialog.setMessage("Registering Please Wait...");
+            progressDialog.show();
 
             //code to add a 1.5 second delay before changing the view.
             try {
