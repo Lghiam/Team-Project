@@ -86,7 +86,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> eb6280cc0e266afe8ddbb50219bd2072ab9cd565
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/annotation_processor_list" />
 >>>>>>> eb6280cc0e266afe8ddbb50219bd2072ab9cd565
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/apk_list" />
@@ -106,7 +109,10 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> eb6280cc0e266afe8ddbb50219bd2072ab9cd565
       <excludeFolder url="file://$MODULE_DIR$/build/reports" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
 >>>>>>> eb6280cc0e266afe8ddbb50219bd2072ab9cd565
