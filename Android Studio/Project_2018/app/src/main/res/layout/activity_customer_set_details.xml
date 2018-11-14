@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/FnameET"
-        android:layout_width="wrap_content"
+        android:layout_width="252dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -27,6 +27,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/textbordersquare"
         android:ems="10"
         android:hint="First Name"
         android:inputType="textPersonName"
@@ -39,7 +40,7 @@
 
     <EditText
         android:id="@+id/LnameET"
-        android:layout_width="wrap_content"
+        android:layout_width="252dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -47,6 +48,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/textbordersquare"
         android:ems="10"
         android:hint="Last Name"
         android:inputType="textPersonName"
@@ -59,7 +61,7 @@
 
     <EditText
         android:id="@+id/PhoneET"
-        android:layout_width="wrap_content"
+        android:layout_width="252dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -67,6 +69,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/textbordersquare"
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="phone"
@@ -79,7 +82,7 @@
 
     <EditText
         android:id="@+id/AddressET"
-        android:layout_width="wrap_content"
+        android:layout_width="252dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -87,6 +90,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/textbordersquare"
         android:ems="10"
         android:hint="Address"
         android:inputType="textPostalAddress"
@@ -116,7 +120,7 @@
 
     <EditText
         android:id="@+id/PriceET"
-        android:layout_width="wrap_content"
+        android:layout_width="252dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -124,6 +128,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/textbordersquare"
         android:ems="10"
         android:hint="Amount (Price)"
         android:inputType="number"
@@ -152,9 +157,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Phone number must contain 10 numbers"
         app:layout_constraintBottom_toTopOf="@+id/PhoneET"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
