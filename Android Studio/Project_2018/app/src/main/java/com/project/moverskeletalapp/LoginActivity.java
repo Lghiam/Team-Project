@@ -1,6 +1,8 @@
 package com.project.moverskeletalapp;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -9,6 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.regex.Pattern;
 
@@ -30,14 +38,23 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailET;
     private EditText passwordET;
     private Button logBtn;
-    private Boolean validateEmail;
-    private Boolean validatePassword;
+    private Boolean validateEmail = false;
+    private Boolean validatePassword = false;
+    String enteredEmail;
+    String enteredPassword;
+    String email;
+    String password;
+
+
+    FirebaseAuth firebaseAuth;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
         //Searching for ID of variables by the name of the Text box
         emailET = findViewById(R.id.EmailET);
         passwordET = findViewById(R.id.PasswordET);
@@ -51,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
 
@@ -62,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //checks the validation conditions for email.
     private boolean validateEmail() {
-        String email = emailET.getText().toString().trim();
+        email = emailET.getText().toString().trim();
 
         //checking if there are an blanks in the text boxes. if there is it will no redirect to the next page unless it is filled
         if (email.isEmpty()) {
@@ -79,13 +98,13 @@ public class LoginActivity extends AppCompatActivity {
 
     //checks the validation conditions for password.
     private boolean validatePassword() {
-        String password = passwordET.getText().toString().trim();
+        password = passwordET.getText().toString().trim();
 
         //checking if there no blanks in the text boxes and making sure the password is not less than 10 characters. conditions must be met to continue to next page
         if (password.isEmpty()) {
             passwordET.setError("fields can't be empty");
             return false;
-        } else if (password.length() < 10){
+        } else if (password.length() < 7){
             passwordET.setError("password is too short");
             return false;
         } else {
@@ -97,16 +116,28 @@ public class LoginActivity extends AppCompatActivity {
     //method is used to check to see of both validation conditions for email and password are true or false. if conditions are met, user will be redirected to next page.
     public void confirmInput(View v) {
         if (validateEmail() && validatePassword()) {
-            SecondActivity();
+
+            firebaseAuth.signInWithEmailAndPassword(email,password)
+                    .addOnSuccessListener(this, new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            progressDialog.setMessage("Signing in. Please Wait...");
+                            progressDialog.show();
+                            SecondActivity();
+                        }
+                    });
+
+
+            //prints a small box below with email and password entered.
+            String input = "email: " + emailET.getText().toString().trim();
+            input += "\n";
+            input += "password: " + passwordET.getText().toString().trim();
+
+            //Toast method below is used to display the box.
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
         }
 
-        //prints a small box below with email and password entered.
-        String input = "email: " + emailET.getText().toString().trim();
-        input += "\n";
-        input += "password: " + passwordET.getText().toString().trim();
 
-        //Toast method below is used to display the box.
-        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
     }
 
 
