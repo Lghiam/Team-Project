@@ -35,5 +35,7 @@
         <item>more than 10 items</item>
     </string-array>
     <string name="errorDisplay" />
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_review">ReviewActivity</string>
 
 </resources>

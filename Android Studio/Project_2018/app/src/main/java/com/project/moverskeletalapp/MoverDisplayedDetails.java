@@ -12,8 +12,24 @@ public class MoverDisplayedDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mover_displayed_details);
     }
+
+    // Button to go to Contact page
     public void btnContactMover(View view){
         Intent intent = new Intent(this, ChatCustomerSideActivity.class);
+        startActivity(intent);
+
+    }
+
+    // Button to go to Map page
+    public void btnMap(View view){
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+
+    }
+
+    // Button to go to Review page
+    public void btnReview(View view){
+        Intent intent = new Intent(this, ReviewActivity.class);
         startActivity(intent);
 
     }

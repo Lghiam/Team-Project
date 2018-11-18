@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
      }
  }*/
-    private static int SPLASH_TIME = 3000;
+    private static int SPLASH_TIME = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

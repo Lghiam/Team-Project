@@ -16,9 +16,10 @@
         android:layout_marginLeft="237dp"
         android:layout_marginBottom="350dp"
         android:background="#000000"
-        android:textColor="#f1f1f1"
+        android:onClick="BtnToRegister"
         android:text="REGISTER"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+        android:textColor="#f1f1f1" />
 
     <Button
         android:id="@+id/BtnL"
@@ -30,10 +31,11 @@
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
         android:layout_marginBottom="350dp"
-        android:textColor="#f1f1f1"
         android:background="#000000"
+        android:onClick="BtnLogin"
         android:text="LOG IN"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
+        android:textColor="#f1f1f1" />
 
 
 </RelativeLayout>
