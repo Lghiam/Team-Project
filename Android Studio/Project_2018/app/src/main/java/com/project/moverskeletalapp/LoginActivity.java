@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailET;
     private EditText passwordET;
     private Button logBtn;
+    private Button quickLogBtn;
     private Boolean validateEmail = false;
     private Boolean validatePassword = false;
     String enteredEmail;
@@ -59,12 +60,19 @@ public class LoginActivity extends AppCompatActivity {
         emailET = findViewById(R.id.EmailET);
         passwordET = findViewById(R.id.PasswordET);
         logBtn = findViewById(R.id.logBtn);
+        quickLogBtn = findViewById(R.id.quickLogBtn);
 
         //On click function for login button. checks the condition of validation mentioned below/
         logBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 confirmInput(v);
+            }
+        });
+        quickLogBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                QuickLog(v);
             }
         });
 
@@ -136,6 +144,30 @@ public class LoginActivity extends AppCompatActivity {
             //Toast method below is used to display the box.
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
         }
+
+
+    }
+    public void QuickLog(View v) {
+
+            firebaseAuth.signInWithEmailAndPassword("Test@test.test","Test1234")
+                    .addOnSuccessListener(this, new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            progressDialog.setMessage("Signing in. Please Wait...");
+                            progressDialog.show();
+                            SecondActivity();
+                        }
+                    });
+
+
+            //prints a small box below with email and password entered.
+            String input = "email: " + emailET.getText().toString().trim();
+            input += "\n";
+            input += "password: " + passwordET.getText().toString().trim();
+
+            //Toast method below is used to display the box.
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+
 
 
     }
