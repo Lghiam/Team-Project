@@ -28,10 +28,10 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
     private Button save;
     private String id;
     private String userType = "Customer";
-    String firstname;
-    String phonenumber;
-    String homeaddress;
-    String amount;
+    private String firstname;
+    private String phonenumber;
+    private String homeaddress;
+    private String amount;
 
 
     DatabaseReference databaseReference;
@@ -49,7 +49,7 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
         phone = findViewById(R.id.PhoneET);
         address = findViewById(R.id.AddressET);
         price = findViewById(R.id.PriceET);
-        type = findViewById(R.id.spinner1);
+        //type = findViewById(R.id.spinner1);
         save = findViewById(R.id.saveBtn);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -58,11 +58,11 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
         id = firebaseAuth.getCurrentUser().getUid();
 
         //Spinner is the used to make a drop menu selection.
-        Spinner spinner = findViewById(R.id.spinner1);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Type, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        //Spinner spinner = findViewById(R.id.spinner1);
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Type, android.R.layout.simple_spinner_item);
+        //adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        //spinner.setAdapter(adapter);
+       // spinner.setOnItemSelectedListener(this);
 
 
     }

@@ -23,10 +23,10 @@ public class MoverSetDetailsActivity extends AppCompatActivity {
     private Button Save2;
     private String id;
     private String userType = "Mover";
-    String firstname;
-    String phonenumber;
-    String CarReg;
-    String moveid;
+    private String firstname;
+    private String phonenumber;
+    private String CarReg;
+    private String moveid;
 
 
     DatabaseReference databaseReference;

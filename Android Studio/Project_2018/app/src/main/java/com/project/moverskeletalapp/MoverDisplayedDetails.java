@@ -4,13 +4,44 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 
 public class MoverDisplayedDetails extends AppCompatActivity {
+
+    private String CurrentUserID;
+    private String TargetUserID;
+    private String targetUserName;
+    private String targetCarReg;
+    private String targetLicenceid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mover_displayed_details);
+
+        DatabaseReference databaseReference;
+        FirebaseAuth firebaseAuth;
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        CurrentUserID = firebaseAuth.getCurrentUser().getUid();
+
+        targetUserName="Placeholder";
+        targetCarReg="Placeholder";
+        targetLicenceid="Placeholder";
+
+
+        TextView showMoverName = findViewById(R.id.showMoverName);
+        showMoverName.setText(String.valueOf(targetUserName));
+        TextView showVecReg = findViewById(R.id.showVecReg);
+        showVecReg.setText(String.valueOf(targetCarReg));
+        TextView showLicNo = findViewById(R.id.showLicNo);
+        showLicNo.setText(String.valueOf(targetLicenceid));
+
+
+
     }
 
     // Button to go to Contact page

@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/PhoneET"
         app:layout_constraintVertical_bias="0.106" />
 
-    <Spinner
+    <!--<Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />-->
 
     <EditText
         android:id="@+id/PriceET"
@@ -107,12 +107,12 @@
         android:ems="10"
         android:hint="Amount (Price)"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/spinner1"
+        app:layout_constraintBottom_toTopOf="@+id/saveBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddressET"
-        app:layout_constraintVertical_bias="0.146" />
+        app:layout_constraintVertical_bias="0.294" />
 
 
     <Button

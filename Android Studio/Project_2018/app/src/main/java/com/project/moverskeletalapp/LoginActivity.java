@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -61,6 +62,8 @@ public class LoginActivity extends AppCompatActivity {
         passwordET = findViewById(R.id.PasswordET);
         logBtn = findViewById(R.id.logBtn);
         quickLogBtn = findViewById(R.id.quickLogBtn);
+
+        firebaseAuth.signOut();
 
         //On click function for login button. checks the condition of validation mentioned below/
         logBtn.setOnClickListener(new View.OnClickListener() {
@@ -137,12 +140,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
             //prints a small box below with email and password entered.
-            String input = "email: " + emailET.getText().toString().trim();
+            /*String input = "email: " + emailET.getText().toString().trim();
             input += "\n";
             input += "password: " + passwordET.getText().toString().trim();
 
             //Toast method below is used to display the box.
-            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();*/
         }
 
 
