@@ -42,8 +42,16 @@ public class CustomerDisplayedDetails extends AppCompatActivity {
         TextView showCustPrice = findViewById(R.id.showCustPrice);
         showCustPrice.setText(String.valueOf("€"+targetUserPrice));
     }
+    // Button to go to Contact page
     public void btnContactCustomer(View view){
         Intent intent = new Intent(this, ChatMoverSideActivity.class);
+        startActivity(intent);
+
+    }
+
+    // Button to go to Map page
+    public void btnMap(View view){
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
 
     }
