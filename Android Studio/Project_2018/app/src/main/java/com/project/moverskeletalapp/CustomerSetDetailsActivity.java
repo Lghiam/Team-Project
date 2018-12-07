@@ -44,7 +44,7 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
         setContentView(R.layout.activity_customer_set_details);
 
         //Searching for ID of variables by the name of the Text box
-        fname = findViewById(R.id.setCustUsername);
+        fname = findViewById(R.id.FnameET);
         //lname = findViewById(R.id.LnameET);
         phone = findViewById(R.id.PhoneET);
         address = findViewById(R.id.AddressET);

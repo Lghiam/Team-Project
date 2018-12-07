@@ -39,7 +39,7 @@ public class MoverSetDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mover_set_details);
 
-        fname = findViewById(R.id.setMoverUsername);
+        fname = findViewById(R.id.FnameET);
         //lname = findViewById(R.id.LnameET);
         phone = findViewById(R.id.PhoneET);
         VehReg = findViewById(R.id.CarET);

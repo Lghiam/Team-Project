@@ -2,6 +2,7 @@ package com.project.moverskeletalapp;
 
 import android.content.Intent;
 import android.nfc.Tag;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,7 +50,7 @@ public class CustomersListOfMatchsActivity extends AppCompatActivity {
 
         myRef.addValueEventListener(new ValueEventListener(){
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot){
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 showData(dataSnapshot);
             }
 

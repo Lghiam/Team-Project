@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         emailET = findViewById(R.id.EmailET);
         passwordET = findViewById(R.id.PasswordET);
         logBtn = findViewById(R.id.logBtn);
-        quickLogBtn = findViewById(R.id.quickLogBtn);
+
 
         firebaseAuth.signOut();
 
@@ -72,12 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                 confirmInput(v);
             }
         });
-        quickLogBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                QuickLog(v);
-            }
-        });
+
 
 
 
@@ -149,8 +144,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-    }
-    public void QuickLog(View v) {
+
+    /*public void QuickLog(View v) {
 
             firebaseAuth.signInWithEmailAndPassword("Test@test.test","Test1234")
                     .addOnSuccessListener(this, new OnSuccessListener<AuthResult>() {
@@ -160,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.show();
                             SecondActivity();
                         }
-                    });
+                    });*/
 
 
             //prints a small box below with email and password entered.
