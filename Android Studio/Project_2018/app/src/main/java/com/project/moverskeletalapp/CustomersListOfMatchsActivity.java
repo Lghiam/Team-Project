@@ -27,7 +27,9 @@ public class CustomersListOfMatchsActivity extends AppCompatActivity {
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference myRef;
+
     private String userID;
+
     private static final String TAG = "ViewDatabase";
 
 
@@ -36,7 +38,7 @@ public class CustomersListOfMatchsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customers_list_of_matchs);
-        mListView = (ListView) findViewById(R.id.custResultsList);
+        mListView = findViewById(R.id.custResultsList);
 
 
         /*
@@ -67,30 +69,25 @@ public class CustomersListOfMatchsActivity extends AppCompatActivity {
     //Taking a screenshot of the database to pull data
     private void showData(DataSnapshot dataSnapshot) {
         for(DataSnapshot ds : dataSnapshot.getChildren()){
-            moverInfo mInfo = new moverInfo();
+            MoverSetDetailsActivity mInfo = new MoverSetDetailsActivity();
 
 
-            mInfo.setfName(ds.child(userID).getValue(moverInfo.class).getfName()); //set & get the name
-            mInfo.setlName(ds.child(userID).getValue(moverInfo.class).getlName()); //set & get the name
-            mInfo.setPhoneNumber(ds.child(userID).getValue(moverInfo.class).getPhoneNumber()); //set & get the name
-            mInfo.setLicense(ds.child(userID).getValue(moverInfo.class).getLicense()); //set & get license number
-            mInfo.setVehReg(ds.child(userID).getValue(moverInfo.class).getVehReg()); //set & get veh reg
-            mInfo.setVehicleType(ds.child(userID).getValue(moverInfo.class).getVehicleType()); //set & get vechType
+            mInfo.setUserName(ds.child(userID).getValue(MoverSetDetailsActivity.class).getUserName()); //set & get the name
+            mInfo.setPhoneNumber(ds.child(userID).getValue(MoverSetDetailsActivity.class).getPhoneNumber()); //set & get the name
+            mInfo.setCarReg(ds.child(userID).getValue(MoverSetDetailsActivity.class).getCarReg()); //set & get veh reg
+
 
             //display all the information
-            Log.d(TAG, "showData: Name: " + mInfo.getfName() + " " + mInfo.getlName());
-            Log.d(TAG, "showData: Phone Number: " + mInfo.getPhoneNumber());
-            Log.d(TAG, "showData: License: " + mInfo.getLicense());
-            Log.d(TAG, "showData: Vehicle Registration: " + mInfo.getVehReg());
-            Log.d(TAG, "showData: Vehicle Model: " + mInfo.getVehicleType());
+            Log.d(TAG, "showData: Name: " + MoverSetDetailsActivity.getUserName());
+            Log.d(TAG, "showData: Phone Number: " + MoverSetDetailsActivity.getPhoneNumber());
+            Log.d(TAG, "showData: Car Registration: " + MoverSetDetailsActivity.getCarReg());
+
 
             ArrayList<String> array = new ArrayList<>();
-            array.add(mInfo.getfName());
-            array.add(mInfo.getlName());
+            array.add(mInfo.getUserName());
             array.add(mInfo.getPhoneNumber());
-            array.add(mInfo.getLicense());
-            array.add(mInfo.getVehReg());
-            array.add(mInfo.getVehicleType());
+            array.add(mInfo.getCarReg());
+
             ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
             mListView.setAdapter(adapter);
 

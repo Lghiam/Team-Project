@@ -55,23 +55,23 @@ public class MoverListOfMatches extends AppCompatActivity {
     private void showData(DataSnapshot dataSnapshot) {
         for(DataSnapshot ds : dataSnapshot.getChildren()){
 
-            customerInfo cInfo = new customerInfo();
+            CustomerSetDetailsActivity cInfo = new CustomerSetDetailsActivity();
 
-            cInfo.setCustFName(ds.child(userID).getValue(customerInfo.class).getCustFName()); //set & get the name
-            cInfo.setCustLName(ds.child(userID).getValue(customerInfo.class).getCustLName()); //set & get the name
-            cInfo.setCustNumber(ds.child(userID).getValue(customerInfo.class).getCustNumber()); //set & get the name
-            cInfo.setCustAddress(ds.child(userID).getValue(customerInfo.class).getCustAddress()); //set & get the address
-
-            Log.d(TAG, "showData: Name: " + cInfo.getCustFName() + " " + cInfo.getCustLName());
-            Log.d(TAG, "showData: Number: " + cInfo.getCustNumber());
-            Log.d(TAG, "showData: Address: " + cInfo.getCustAddress());
+            cInfo.setUserName(ds.child(userID).getValue(CustomerSetDetailsActivity.class).getUserName()); //set & get the name
+            cInfo.setPhoneNumber(ds.child(userID).getValue(CustomerSetDetailsActivity.class).getPhoneNumber()); //set & get the name
+            cInfo.setHomeAddress(ds.child(userID).getValue(CustomerSetDetailsActivity.class).getHomeAddress()); //set & get the address
+            cInfo.setAmount(ds.child(userID).getValue(CustomerSetDetailsActivity.class).getAmount());
+            Log.d(TAG, "showData: Name: " + cInfo.getUserName());
+            Log.d(TAG, "showData: Number: " + cInfo.getPhoneNumber());
+            Log.d(TAG, "showData: Address: " + cInfo.getHomeAddress());
+            Log.d(TAG, "showData: Price Offered For Move: " + cInfo.getAmount());
 
 
             ArrayList<String> array = new ArrayList<>();
-            array.add(cInfo.getCustFName());
-            array.add(cInfo.getCustLName());
-            array.add(cInfo.getCustNumber());
-            array.add(cInfo.getCustAddress());
+            array.add(cInfo.getUserName());
+            array.add(cInfo.getPhoneNumber());
+            array.add(cInfo.getHomeAddress());
+            array.add(cInfo.getAmount());
             ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
             cListView.setAdapter(adapter);
 
