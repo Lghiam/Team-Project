@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#f1f1f1">
+    android:background="@drawable/gradient1">
+
 
     <ImageView
         android:id="@+id/logo"

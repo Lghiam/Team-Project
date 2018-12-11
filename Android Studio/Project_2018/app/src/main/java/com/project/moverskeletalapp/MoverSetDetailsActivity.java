@@ -23,45 +23,10 @@ public class MoverSetDetailsActivity extends AppCompatActivity {
     private Button Save2;
     private String id;
     private String userType = "Mover";
-    private static String userName;
-    private static String phonenumber;
-    private static String CarReg;
+    private String firstname;
+    private String phonenumber;
+    private String CarReg;
     private String moveid;
-
-
-    public MoverSetDetailsActivity(){
-
-    }
-
-    //getters and setters
-    public static String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String firstname) {
-        this.userName = firstname;
-    }
-
-    public static String getPhoneNumber() {
-        return phonenumber;
-    }
-
-    public void setPhoneNumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
-
-    public static String getCarReg() {
-        return CarReg;
-    }
-
-    public void setCarReg(String carReg) {
-        CarReg = carReg;
-    }
-
-
-
-
-
 
 
     DatabaseReference databaseReference;
@@ -74,7 +39,7 @@ public class MoverSetDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mover_set_details);
 
-        fname = findViewById(R.id.FnameET);
+        fname = findViewById(R.id.setMoverUsername);
         //lname = findViewById(R.id.LnameET);
         phone = findViewById(R.id.PhoneET);
         VehReg = findViewById(R.id.CarET);
@@ -97,9 +62,9 @@ public class MoverSetDetailsActivity extends AppCompatActivity {
             databaseReference = FirebaseDatabase.getInstance().getReference("MoverUserBase").child(id);
             //databaseReference = databaseReference.child("Profile").child(id);
 
-            databaseReference.child("userID").setValue(id);
+            databaseReference.child("UID").setValue(id);
             databaseReference.child("UserType").setValue(userType);
-            databaseReference.child("Username").setValue(userName);
+            databaseReference.child("Username").setValue(firstname);
             databaseReference.child("Phone").setValue(phonenumber);
             databaseReference.child("VehReg").setValue(CarReg);
             databaseReference.child("License").setValue(moveid);
@@ -129,9 +94,9 @@ public class MoverSetDetailsActivity extends AppCompatActivity {
 
     //boolean statement is used for checking to see if the first name box is or is not empty
     private boolean validatefname(){
-        userName = fname.getText().toString().trim();
+        firstname = fname.getText().toString().trim();
 
-        if(userName.isEmpty()){
+        if(firstname.isEmpty()){
             fname.setError("Fields can't be empty");
             return false;
         } else {

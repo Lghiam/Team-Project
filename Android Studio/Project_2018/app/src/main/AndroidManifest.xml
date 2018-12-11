@@ -31,36 +31,48 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginRegActivity" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".UserChoiceActivity"
             android:parentActivityName=".LoginRegActivity" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".MoverSetDetailsActivity"
             android:parentActivityName=".UserChoiceActivity" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".CustomerSetDetailsActivity"
             android:parentActivityName=".UserChoiceActivity" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".CustomersListOfMatchsActivity"
             android:parentActivityName=".CustomerSetDetailsActivity" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".MoverListOfMatches"
             android:parentActivityName=".MoverSetDetailsActivity" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".MoverDisplayedDetails"
             android:parentActivityName=".CustomersListOfMatchsActivity" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".CustomerDisplayedDetails"
             android:parentActivityName=".MoverListOfMatches" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".ChatCustomerSideActivity"
             android:parentActivityName=".MoverDisplayedDetails" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".ChatMoverSideActivity"
             android:parentActivityName=".CustomerDisplayedDetails" />
-        <activity android:name=".LoginActivity" />
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".LoginActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -74,6 +86,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity

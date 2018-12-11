@@ -1,6 +1,40 @@
 package com.project.moverskeletalapp;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+public class MoverListOfMatches extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mover_list_of_matches);
+    }
+    //On Click command to bring up matches details
+    public void btnMoverMatch(View view){
+        Intent intent = new Intent(this, CustomerDisplayedDetails.class);
+        startActivity(intent);
+
+    }
+}
+
+
+/*
+package com.project.moverskeletalapp;
+
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -87,3 +121,5 @@ public class MoverListOfMatches extends AppCompatActivity {
 
     }
 }
+*/
+

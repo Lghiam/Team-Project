@@ -16,6 +16,7 @@ public class MoverDisplayedDetails extends AppCompatActivity {
     private String targetUserName;
     private String targetCarReg;
     private String targetLicenceid;
+    private String targetMovPN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class MoverDisplayedDetails extends AppCompatActivity {
         targetUserName="Placeholder";
         targetCarReg="Placeholder";
         targetLicenceid="Placeholder";
+        targetMovPN="Placeholder";
 
 
         TextView showMoverName = findViewById(R.id.showMoverName);
@@ -39,17 +41,19 @@ public class MoverDisplayedDetails extends AppCompatActivity {
         showVecReg.setText(String.valueOf(targetCarReg));
         TextView showLicNo = findViewById(R.id.showLicNo);
         showLicNo.setText(String.valueOf(targetLicenceid));
+        TextView showMovPN = findViewById(R.id.showMovPN);
+        showMovPN.setText(String.valueOf(targetMovPN));
 
 
 
     }
-
+    /*
     // Button to go to Contact page
     public void btnContactMover(View view){
         Intent intent = new Intent(this, ChatCustomerSideActivity.class);
         startActivity(intent);
 
-    }
+    }*/
 
     // Button to go to Map page
     public void btnMap(View view){

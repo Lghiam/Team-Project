@@ -28,47 +28,11 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
     private Button save;
     private String id;
     private String userType = "Customer";
-    private String userName;
+    private String firstname;
     private String phonenumber;
     private String homeaddress;
     private String amount;
 
-
-    public CustomerSetDetailsActivity(){
-
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPhoneNumber() {
-        return phonenumber;
-    }
-
-    public void setPhoneNumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
-
-    public String getHomeAddress() {
-        return homeaddress;
-    }
-
-    public void setHomeAddress(String homeaddress) {
-        this.homeaddress = homeaddress;
-    }
-
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
 
     DatabaseReference databaseReference;
     ProgressDialog progressDialog;
@@ -80,7 +44,7 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
         setContentView(R.layout.activity_customer_set_details);
 
         //Searching for ID of variables by the name of the Text box
-        fname = findViewById(R.id.FnameET);
+        fname = findViewById(R.id.setCustUsername);
         //lname = findViewById(R.id.LnameET);
         phone = findViewById(R.id.PhoneET);
         address = findViewById(R.id.AddressET);
@@ -122,7 +86,7 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
 
             databaseReference.child("UID").setValue(id);
             databaseReference.child("userType").setValue(userType);
-            databaseReference.child("Username").setValue(userName);
+            databaseReference.child("Username").setValue(firstname);
             databaseReference.child("Phone").setValue(phonenumber);
             databaseReference.child("Address").setValue(homeaddress);
             databaseReference.child("Price").setValue(amount);
@@ -148,9 +112,9 @@ public class CustomerSetDetailsActivity extends AppCompatActivity implements Ada
 
     //boolean statement is used for checking to see if the first name box is or is not empty
     private boolean validatefname(){
-        userName = fname.getText().toString().trim();
+        firstname = fname.getText().toString().trim();
 
-        if(userName.isEmpty()){
+        if(firstname.isEmpty()){
             fname.setError("Fields can't be empty");
             return false;
         } else {

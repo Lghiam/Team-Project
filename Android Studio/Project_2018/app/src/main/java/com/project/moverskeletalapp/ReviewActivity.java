@@ -19,10 +19,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ReviewActivity extends AppCompatActivity {
 
+    //Declaring variables
     private RatingBar ratingBar;
     private String id;
     private String ratingBarDisplay;
     private String Comments;
+
 
     DatabaseReference databaseReference;
     ProgressDialog progressDialog;
@@ -33,6 +35,7 @@ public class ReviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
+        //Searching for ID of variables by the name of the Text box
         final EditText Comments = (EditText) findViewById(R.id.CommentET);
         final RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         Button SubmitBtn = (Button) findViewById(R.id.SubmitBtn);
@@ -42,6 +45,7 @@ public class ReviewActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         id = firebaseAuth.getCurrentUser().getUid();
 
+        //code for the submit button. When button is clicked review is saved from textbox and will display below thanks for rating us.
         SubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,18 +56,23 @@ public class ReviewActivity extends AppCompatActivity {
     }
 
 
+    //backpage function below is performed when submit button is clicked.
     public void backpage(){
 
+        //code saves the used id and review to the database
         databaseReference = FirebaseDatabase.getInstance().getReference("RatingsBase").child(id);
 
         databaseReference.child("UID").setValue(id);
-        databaseReference.child("Ratings").setValue(ratingBarDisplay);
+
+        //databaseReference.child("Test").setValue("Hi");
+        //databaseReference.child("Ratings").setValue(ratingBarDisplay);
         databaseReference.child("comments").setValue(Comments);
 
 
         progressDialog.setMessage("Thanks for you rating us");
         progressDialog.show();
 
+        //redirects user to the next page
         Intent intent = new Intent (this, MoverDisplayedDetails.class);
         startActivity(intent);
     }

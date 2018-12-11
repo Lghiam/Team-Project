@@ -19,6 +19,7 @@ public class CustomerDisplayedDetails extends AppCompatActivity {
     private String targetUserName;
     private String targetUserArea;
     private String targetUserPrice;
+    private String targetUserPN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class CustomerDisplayedDetails extends AppCompatActivity {
         targetUserName="Placeholder";
         targetUserArea="Placeholder";
         targetUserPrice="Placeholder";
+        targetUserPN="Placeholder";
 
         TextView showCustName = findViewById(R.id.showCustName);
         showCustName.setText(String.valueOf(targetUserName));
@@ -41,17 +43,18 @@ public class CustomerDisplayedDetails extends AppCompatActivity {
         showCustArea.setText(String.valueOf(targetUserArea));
         TextView showCustPrice = findViewById(R.id.showCustPrice);
         showCustPrice.setText(String.valueOf("€"+targetUserPrice));
+        TextView showCustPN = findViewById(R.id.showCustPN);
+        showCustPN.setText(String.valueOf(targetUserPN));
     }
-    // Button to go to Contact page
-    public void btnContactCustomer(View view){
-        Intent intent = new Intent(this, ChatMoverSideActivity.class);
+
+    public void btnMap(View view){
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
 
     }
 
-    // Button to go to Map page
-    public void btnMap(View view){
-        Intent intent = new Intent(this, MapsActivity.class);
+    public void btnContactCustomer(View view){
+        Intent intent = new Intent(this, ChatMoverSideActivity.class);
         startActivity(intent);
 
     }

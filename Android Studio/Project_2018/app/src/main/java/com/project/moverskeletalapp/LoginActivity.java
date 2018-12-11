@@ -56,12 +56,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseAuth.getInstance().signOut();
         progressDialog = new ProgressDialog(this);
         //Searching for ID of variables by the name of the Text box
         emailET = findViewById(R.id.EmailET);
         passwordET = findViewById(R.id.PasswordET);
         logBtn = findViewById(R.id.logBtn);
-
+        //quickLogBtn = findViewById(R.id.quickLogBtn);
 
         firebaseAuth.signOut();
 
@@ -72,7 +73,12 @@ public class LoginActivity extends AppCompatActivity {
                 confirmInput(v);
             }
         });
-
+       /* quickLogBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                QuickLog(v);
+            }
+        });*/
 
 
 
@@ -111,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
             passwordET.setError("fields can't be empty");
             return false;
         } else if (password.length() < 7){
-            passwordET.setError("password is too short");
+            passwordET.setError("Invalid Password");
             return false;
         } else {
             passwordET.setError(null);
@@ -144,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-
+    }
     /*public void QuickLog(View v) {
 
             firebaseAuth.signInWithEmailAndPassword("Test@test.test","Test1234")
@@ -155,20 +161,20 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.show();
                             SecondActivity();
                         }
-                    });*/
+                    });
 
 
             //prints a small box below with email and password entered.
-            String input = "email: " + emailET.getText().toString().trim();
-            input += "\n";
-            input += "password: " + passwordET.getText().toString().trim();
+            //String input = "email: " + emailET.getText().toString().trim();
+            //input += "\n";
+            //input += "password: " + passwordET.getText().toString().trim();
 
             //Toast method below is used to display the box.
-            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
 
 
 
-    }
+    }*/
 
 
 

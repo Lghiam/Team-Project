@@ -23,7 +23,7 @@ public class UserChoiceActivity extends AppCompatActivity {
         id = firebaseAuth.getCurrentUser().getUid();
         TextView DisplayedMessage = findViewById(R.id.textView4);
 
-        DisplayedMessage.setText(String.valueOf("User ID Test "+id));
+        //DisplayedMessage.setText(String.valueOf("User ID Test "+id));
     }
     //Button that sets the user as a Customer and brings them to that details page
     public void btnChoiceCust(View view){
